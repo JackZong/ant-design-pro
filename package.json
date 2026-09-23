@@ -8,7 +8,7 @@
   "scripts": {
     "dev": "vite",
     "start": "vite",
-    "build": "tsc -b && vite build",
+    "build": "tsc --noEmit && vite build",
     "preview": "vite preview --port 8000",
     "lint": "npm run biome:lint && npm run tsc",
     "lint-staged": "lint-staged",

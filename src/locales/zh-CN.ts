@@ -1,22 +1,58 @@
-import component from './zh-CN/component';
-import globalHeader from './zh-CN/globalHeader';
-import menu from './zh-CN/menu';
-import network from './zh-CN/network';
-import pages from './zh-CN/pages';
-import settingDrawer from './zh-CN/settingDrawer';
-import settings from './zh-CN/settings';
-
 export default {
   'navBar.lang': '语言',
-  'layout.user.link.help': '帮助',
-  'layout.user.link.privacy': '隐私',
-  'layout.user.link.terms': '条款',
-  'app.preview.down.block': '下载此页面到本地项目',
-  ...pages,
-  ...globalHeader,
-  ...menu,
-  ...settingDrawer,
-  ...settings,
-  ...network,
-  ...component,
+  'menu.welcome': '欢迎',
+  'menu.admin': '管理页',
+  'menu.admin.sub-page': '二级管理页',
+  'menu.login': '登录',
+  'pages.layouts.userLayout.title':
+    'Ant Design 是西湖区最具影响力的 Web 设计规范',
+  'pages.login.accountLogin.tab': '账户密码登录',
+  'pages.login.accountLogin.errorMessage':
+    '错误的用户名和密码(admin/ant.design)',
+  'pages.login.failure': '登录失败，请重试！',
+  'pages.login.success': '登录成功！',
+  'pages.login.username.placeholder': '用户名: admin or user',
+  'pages.login.username.required': '用户名是必填项！',
+  'pages.login.password.placeholder': '密码: ant.design',
+  'pages.login.password.required': '密码是必填项！',
+  'pages.login.phoneLogin.tab': '手机号登录',
+  'pages.login.phoneLogin.errorMessage': '验证码错误',
+  'pages.login.phoneNumber.placeholder': '请输入手机号！',
+  'pages.login.phoneNumber.required': '手机号是必填项！',
+  'pages.login.phoneNumber.invalid': '不合法的手机号！',
+  'pages.login.captcha.placeholder': '请输入验证码！',
+  'pages.login.captcha.required': '验证码是必填项！',
+  'pages.login.phoneLogin.getVerificationCode': '获取验证码',
+  'pages.getCaptchaSecondText': '秒后重新获取',
+  'pages.login.rememberMe': '自动登录',
+  'pages.login.forgotPassword': '忘记密码 ?',
+  'pages.login.submit': '登录',
+  'pages.login.loginWith': '其他登录方式 :',
+  'pages.welcome.celebrationTitle': '欢迎使用 Ant Design Pro {v6}',
+  'pages.welcome.alertMessage': '更快更强的重型组件，已经发布。',
+  'pages.welcome.infoCard.vite.title': '了解 Vite',
+  'pages.welcome.infoCard.vite.desc':
+    'Vite 是下一代前端构建工具，提供极速的开发体验与优化的生产构建。',
+  'pages.welcome.infoCard.antd.title': '了解 Ant Design',
+  'pages.welcome.infoCard.antd.desc':
+    'antd 是基于 Ant Design 设计体系的 React UI 组件库，主要用于研发企业级中后台产品。',
+  'pages.welcome.infoCard.procomponents.title': '了解 Pro Components',
+  'pages.welcome.infoCard.procomponents.desc':
+    'ProComponents 是基于 Ant Design 的高抽象模板组件，以一个组件就是一个页面为开发理念。',
+  'pages.404.subTitle': '抱歉，您访问的页面不存在。',
+  'pages.404.buttonText': '返回首页',
+  'pages.403.subTitle': '抱歉，你无权访问该页面。',
+  'pages.403.buttonText': '返回首页',
+  'pages.admin.subPage.title': '这个页面只有 admin 权限才能查看',
+  'app.error.render.title': '页面出错了',
+  'app.error.render.description':
+    '抱歉，当前页面发生错误，请刷新或返回首页。',
+  'app.error.chunk.title': '页面加载失败',
+  'app.error.chunk.description.online':
+    '页面资源加载失败，请刷新后重试。',
+  'app.error.chunk.description.offline':
+    '网络连接已断开，请检查网络后刷新。',
+  'app.error.retry': '重试',
+  'app.error.reload': '刷新页面',
+  'app.error.home': '返回首页',
 };

@@ -12,19 +12,14 @@ import {
   ProFormCheckbox,
   ProFormText,
 } from '@ant-design/pro-components';
-import {
-  FormattedMessage,
-  Helmet,
-  SelectLang,
-  useIntl,
-  useModel,
-} from '@umijs/max';
 import { Alert, App, Button, Tabs } from 'antd';
 import { createStyles } from 'antd-style';
 import React, { startTransition, useState } from 'react';
-import { Footer } from '@/components';
-import { login } from '@/services/ant-design-pro/api';
-import { getFakeCaptcha } from '@/services/ant-design-pro/login';
+import { FormattedMessage, useIntl } from 'react-intl';
+import { useNavigate, useSearchParams } from 'react-router-dom';
+import { Footer, LangSwitch } from '@/components';
+import { useAuth } from '@/contexts/AuthContext';
+import { getFakeCaptcha, login } from '@/services/api';
 import Settings from '../../../../config/defaultSettings';
 
 /**
@@ -32,16 +27,15 @@ import Settings from '../../../../config/defaultSettings';
  * Only allow same-origin relative paths starting with '/'.
  */
 const getSafeRedirectUrl = (redirect: string | null): string => {
-  if (!redirect?.startsWith('/')) return '/';
-
-  if (redirect.startsWith('//')) return '/';
+  if (!redirect?.startsWith('/')) return '/welcome';
+  if (redirect.startsWith('//')) return '/welcome';
 
   try {
     const parsed = new URL(redirect, window.location.origin);
-    if (parsed.origin !== window.location.origin) return '/';
+    if (parsed.origin !== window.location.origin) return '/welcome';
     return `${parsed.pathname}${parsed.search}${parsed.hash}`;
   } catch {
-    return '/';
+    return '/welcome';
   }
 };
 
@@ -86,29 +80,10 @@ const ActionIcons = () => {
 
   return (
     <>
-      <AlipayCircleOutlined
-        key="AlipayCircleOutlined"
-        className={styles.action}
-      />
-      <TaobaoCircleOutlined
-        key="TaobaoCircleOutlined"
-        className={styles.action}
-      />
-      <WeiboCircleOutlined
-        key="WeiboCircleOutlined"
-        className={styles.action}
-      />
+      <AlipayCircleOutlined key="AlipayCircleOutlined" className={styles.action} />
+      <TaobaoCircleOutlined key="TaobaoCircleOutlined" className={styles.action} />
+      <WeiboCircleOutlined key="WeiboCircleOutlined" className={styles.action} />
     </>
-  );
-};
-
-const Lang = () => {
-  const { styles } = useStyles();
-
-  return (
-    <div className={styles.lang} data-lang>
-      {SelectLang && <SelectLang />}
-    </div>
   );
 };
 
@@ -130,63 +105,57 @@ const LoginMessage: React.FC<{
 const Login: React.FC = () => {
   const [userLoginState, setUserLoginState] = useState<API.LoginResult>({});
   const [type, setType] = useState<string>('account');
-  const { initialState, setInitialState } = useModel('@@initialState');
+  const { fetchUserInfo, setCurrentUser } = useAuth();
   const { styles } = useStyles();
   const { message } = App.useApp();
   const intl = useIntl();
-
-  const fetchUserInfo = async () => {
-    const userInfo = await initialState?.fetchUserInfo?.();
-    if (userInfo) {
-      startTransition(() => {
-        setInitialState((s) => ({
-          ...s,
-          currentUser: userInfo,
-        }));
-      });
-    }
-  };
+  const navigate = useNavigate();
+  const [searchParams] = useSearchParams();
 
   const handleSubmit = async (values: API.LoginParams) => {
     try {
-      // 登录
       const msg = await login({ ...values, type });
       if (msg.status === 'ok') {
-        const defaultLoginSuccessMessage = intl.formatMessage({
-          id: 'pages.login.success',
-          defaultMessage: '登录成功！',
-        });
-        message.success(defaultLoginSuccessMessage);
-        await fetchUserInfo();
-        const urlParams = new URL(window.location.href).searchParams;
-        const redirectUrl = getSafeRedirectUrl(urlParams.get('redirect'));
-        window.location.href = redirectUrl;
+        message.success(
+          intl.formatMessage({
+            id: 'pages.login.success',
+            defaultMessage: '登录成功！',
+          }),
+        );
+        const userInfo = await fetchUserInfo();
+        if (userInfo) {
+          startTransition(() => {
+            setCurrentUser(userInfo);
+          });
+        }
+        const redirectUrl = getSafeRedirectUrl(searchParams.get('redirect'));
+        navigate(redirectUrl, { replace: true });
         return;
       }
-      // 如果失败去设置用户错误信息
       setUserLoginState(msg);
     } catch {
-      const defaultLoginFailureMessage = intl.formatMessage({
-        id: 'pages.login.failure',
-        defaultMessage: '登录失败，请重试！',
-      });
-      message.error(defaultLoginFailureMessage);
+      message.error(
+        intl.formatMessage({
+          id: 'pages.login.failure',
+          defaultMessage: '登录失败，请重试！',
+        }),
+      );
     }
   };
   const { status, type: loginType } = userLoginState;
 
   return (
     <div className={styles.container}>
-      <Helmet>
-        <title>
-          {intl.formatMessage({
-            id: 'menu.login',
-            defaultMessage: '登录页',
-          })}
-          {Settings.title && ` - ${Settings.title}`}
-        </title>
-      </Helmet>
-      <Lang />
+      <title>
+        {intl.formatMessage({
+          id: 'menu.login',
+          defaultMessage: '登录页',
+        })}
+        {Settings.title && ` - ${Settings.title}`}
+      </title>
+      <div className={styles.lang} data-lang>
+        <LangSwitch />
+      </div>
       <div
         style={{
           flex: '1',

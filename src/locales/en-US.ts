@@ -1,22 +1,59 @@
-import component from './en-US/component';
-import globalHeader from './en-US/globalHeader';
-import menu from './en-US/menu';
-import network from './en-US/network';
-import pages from './en-US/pages';
-import settingDrawer from './en-US/settingDrawer';
-import settings from './en-US/settings';
-
 export default {
-  'navBar.lang': 'Languages',
-  'layout.user.link.help': 'Help',
-  'layout.user.link.privacy': 'Privacy',
-  'layout.user.link.terms': 'Terms',
-  'app.preview.down.block': 'Download this page to your local project',
-  ...globalHeader,
-  ...menu,
-  ...settingDrawer,
-  ...settings,
-  ...network,
-  ...component,
-  ...pages,
+  'navBar.lang': 'Language',
+  'menu.welcome': 'Welcome',
+  'menu.admin': 'Admin',
+  'menu.admin.sub-page': 'Sub-page',
+  'menu.login': 'Login',
+  'pages.layouts.userLayout.title':
+    'Ant Design is the most influential web design specification in Xihu district',
+  'pages.login.accountLogin.tab': 'Account Login',
+  'pages.login.accountLogin.errorMessage':
+    'Incorrect username/password(admin/ant.design)',
+  'pages.login.failure': 'Login failed, please try again!',
+  'pages.login.success': 'Login successful!',
+  'pages.login.username.placeholder': 'Username: admin or user',
+  'pages.login.username.required': 'Please input your username!',
+  'pages.login.password.placeholder': 'Password: ant.design',
+  'pages.login.password.required': 'Please input your password!',
+  'pages.login.phoneLogin.tab': 'Phone Login',
+  'pages.login.phoneLogin.errorMessage': 'Verification Code Error',
+  'pages.login.phoneNumber.placeholder': 'Phone Number',
+  'pages.login.phoneNumber.required': 'Please input your phone number!',
+  'pages.login.phoneNumber.invalid': 'Phone number is invalid!',
+  'pages.login.captcha.placeholder': 'Verification Code',
+  'pages.login.captcha.required': 'Please input verification code!',
+  'pages.login.phoneLogin.getVerificationCode': 'Get Code',
+  'pages.getCaptchaSecondText': 'sec(s)',
+  'pages.login.rememberMe': 'Remember me',
+  'pages.login.forgotPassword': 'Forgot Password ?',
+  'pages.login.submit': 'Login',
+  'pages.login.loginWith': 'Login with :',
+  'pages.welcome.celebrationTitle': 'Welcome to Ant Design Pro {v6}',
+  'pages.welcome.alertMessage':
+    'Faster and stronger heavy-duty components have been released.',
+  'pages.welcome.infoCard.vite.title': 'Learn Vite',
+  'pages.welcome.infoCard.vite.desc':
+    'Vite is the next generation frontend tooling with instant server start and optimized builds.',
+  'pages.welcome.infoCard.antd.title': 'Learn Ant Design',
+  'pages.welcome.infoCard.antd.desc':
+    'antd is a React UI component library based on the Ant Design system, mainly for enterprise-level mid-end products.',
+  'pages.welcome.infoCard.procomponents.title': 'Learn Pro Components',
+  'pages.welcome.infoCard.procomponents.desc':
+    'ProComponents provides higher-abstraction template components on top of Ant Design, with one-component-one-page philosophy.',
+  'pages.404.subTitle': 'Sorry, the page you visited does not exist.',
+  'pages.404.buttonText': 'Back Home',
+  'pages.403.subTitle': 'Sorry, you are not authorized to access this page.',
+  'pages.403.buttonText': 'Back Home',
+  'pages.admin.subPage.title': 'This page can only be viewed by Admin',
+  'app.error.render.title': 'Something went wrong',
+  'app.error.render.description':
+    'Sorry, an error occurred on this page. Please reload or go back to the home page.',
+  'app.error.chunk.title': 'Failed to load page',
+  'app.error.chunk.description.online':
+    'Page resources failed to load. Please reload and try again.',
+  'app.error.chunk.description.offline':
+    'Your network connection has been lost. Please check your connection and reload.',
+  'app.error.retry': 'Retry',
+  'app.error.reload': 'Reload Page',
+  'app.error.home': 'Back Home',
 };

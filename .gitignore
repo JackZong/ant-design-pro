@@ -30,12 +30,7 @@ functions/*
 # claude code local settings
 .claude/settings.local.json
 
-# umi
-.umi
-.umi-production
-.umi-test
-.umi-undefined
-.turbopack
+# vite
 
 # screenshot
 screenshot

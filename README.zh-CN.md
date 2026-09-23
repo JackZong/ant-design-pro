@@ -8,8 +8,7 @@ Language : [English](./README.md) | 简体中文
 
 [![CI](https://github.com/ant-design/ant-design-pro/actions/workflows/ci.yml/badge.svg)](https://github.com/ant-design/ant-design-pro/actions/workflows/ci.yml)
 [![GitHub release](https://img.shields.io/github/v/release/ant-design/ant-design-pro.svg)](https://github.com/ant-design/ant-design-pro/releases)
-[![Build With Utoo](https://img.shields.io/badge/build%20with-utoo-028fe4.svg)](https://utoo.land)
-[![Build With Umi](https://img.shields.io/badge/build%20with-umi-028fe4.svg)](https://umijs.org/)
+[![Build With Vite](https://img.shields.io/badge/build%20with-vite-646cff.svg)](https://vite.dev/)
 [![Checked with Biome](https://img.shields.io/badge/Checked_with-Biome-60a5fa?style=flat&logo=biome)](https://biomejs.dev)
 [![Ant Design](https://badgen.net/badge/icon/Ant%20Design?icon=https://gw.alipayobjects.com/zos/antfincdn/Pp4WPgVDB3/KDpgvguMpGfqaHPjicRK.svg&label)](https://ant.design/)
 
@@ -42,38 +41,15 @@ Language : [English](./README.md) | 简体中文
 
 ```
 - 欢迎页
-- Dashboard
-  - 分析页
-  - 监控页
-  - 工作台
-- 表单页
-  - 基础表单页
-  - 分步表单页
-  - 高级表单页
-- 列表页
-  - 搜索列表（文章/项目/应用）
-  - 查询表格
-  - 标准列表
-  - 卡片列表
-- 详情页
-  - 基础详情页
-  - 高级详情页
-- 结果
-  - 成功页
-  - 失败页
+- 管理页（权限示例）
 - 异常
   - 403 无权限
   - 404 找不到
-  - 500 服务器出错
-- 用户
-  - 用户中心页
-  - 用户设置页
-- AI 助手
 - 账户
   - 登录
-  - 注册
-  - 注册成功
 ```
+
+基于 **Vite** + React Router + antd v6 + ProComponents。
 
 ## 使用
 
@@ -95,25 +71,8 @@ npm install
 ### 开发
 
 ```bash
-# 启动开发服务器（默认为完整版）
 npm start
 ```
-
-### 精简为简单版本
-
-本项目默认包含所有区块。如果你需要一个最小化的版本，运行：
-
-```bash
-npm run simple
-```
-
-这将会：
-- 删除多余的页面目录（dashboard、form、list/*、profile、result、exception、account 等）
-- 删除多余的 mock 文件
-- 替换路由为简单版本
-- 从 package.json 中移除多余的依赖
-
-**注意**：此操作不可逆，将永久删除文件。
 
 ### 构建
 

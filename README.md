@@ -6,8 +6,7 @@ An out-of-box UI solution for enterprise applications as a React boilerplate.
 
 [![CI](https://github.com/ant-design/ant-design-pro/actions/workflows/ci.yml/badge.svg)](https://github.com/ant-design/ant-design-pro/actions/workflows/ci.yml)
 [![GitHub release](https://img.shields.io/github/v/release/ant-design/ant-design-pro.svg)](https://github.com/ant-design/ant-design-pro/releases)
-[![Build With Utoo](https://img.shields.io/badge/build%20with-utoo-028fe4.svg)](https://utoo.land)
-[![Build With Umi](https://img.shields.io/badge/build%20with-umi-028fe4.svg)](https://umijs.org/)
+[![Build With Vite](https://img.shields.io/badge/build%20with-vite-646cff.svg)](https://vite.dev/)
 [![Checked with Biome](https://img.shields.io/badge/Checked_with-Biome-60a5fa?style=flat&logo=biome)](https://biomejs.dev)
 [![Ant Design](https://badgen.net/badge/icon/Ant%20Design?icon=https://gw.alipayobjects.com/zos/antfincdn/Pp4WPgVDB3/KDpgvguMpGfqaHPjicRK.svg&label)](https://ant.design/)
 
@@ -43,38 +42,15 @@ Language: English | [简体中文](./README.zh-CN.md)
 
 ```
 - Welcome
-- Dashboard
-  - Analysis
-  - Monitor
-  - Workplace
-- Form
-  - Basic Form
-  - Step Form
-  - Advanced Form
-- List
-  - Search List (Articles/Projects/Applications)
-  - Table List
-  - Basic List
-  - Card List
-- Profile
-  - Basic Profile
-  - Advanced Profile
-- Result
-  - Success
-  - Fail
+- Admin (access demo)
 - Exception
   - 403
   - 404
-  - 500
-- Account
-  - Account Center
-  - Account Settings
-- AI Assistant
 - User
   - Login
-  - Register
-  - Register Result
 ```
+
+Built with **Vite** + React Router + antd v6 + ProComponents.
 
 ## Usage
 
@@ -96,25 +72,8 @@ npm install
 ### Development
 
 ```bash
-# Start development server (full version by default)
 npm start
 ```
-
-### Simplify to Simple Version
-
-This project includes all blocks by default. If you need a minimal version, run:
-
-```bash
-npm run simple
-```
-
-This will:
-- Remove extra page directories (dashboard, form, list/*, profile, result, exception, account, etc.)
-- Remove extra mock files
-- Replace routes with simple version
-- Remove extra dependencies from package.json
-
-**Note**: This operation is irreversible and will permanently delete files.
 
 ### Build
 

@@ -94,26 +94,14 @@ const Footer: React.FC = () => {
         </span>
         <Divider orientation="vertical" className={styles.divider} />
         <span className={styles.group}>
-          <span className={styles.label}>Umi</span>
+          <span className={styles.label}>Vite</span>
           <a
             className={styles.link}
-            href="https://umijs.org/"
+            href="https://vite.dev/"
             target="_blank"
             rel="noopener noreferrer"
           >
-            {__UMI_VERSION__}
-          </a>
-        </span>
-        <Divider orientation="vertical" className={styles.divider} />
-        <span className={styles.group}>
-          <span className={styles.label}>Utoo</span>
-          <a
-            className={styles.link}
-            href="https://utoo.land"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            {__UTOO_VERSION__}
+            {__VITE_VERSION__}
           </a>
         </span>
         <Divider orientation="vertical" className={styles.divider} />

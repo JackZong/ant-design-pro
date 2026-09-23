@@ -1,17 +1,26 @@
-import { Link } from '@umijs/max';
 import { Button, Card, Result } from 'antd';
+import React from 'react';
+import { useIntl } from 'react-intl';
+import { Link } from 'react-router-dom';
 
-export default () => (
-  <Card variant="borderless">
-    <Result
-      status="403"
-      title="403"
-      subTitle="Sorry, you are not authorized to access this page."
-      extra={
-        <Link to="/" prefetch>
-          <Button type="primary">Back to home</Button>
-        </Link>
-      }
-    />
-  </Card>
-);
+const Exception403: React.FC = () => {
+  const intl = useIntl();
+  return (
+    <Card variant="borderless">
+      <Result
+        status="403"
+        title="403"
+        subTitle={intl.formatMessage({ id: 'pages.403.subTitle' })}
+        extra={
+          <Link to="/welcome">
+            <Button type="primary">
+              {intl.formatMessage({ id: 'pages.403.buttonText' })}
+            </Button>
+          </Link>
+        }
+      />
+    </Card>
+  );
+};
+
+export default Exception403;

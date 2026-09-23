@@ -1,6 +1,7 @@
-import { Link, useIntl } from '@umijs/max';
 import { Button, Card, Result } from 'antd';
 import React from 'react';
+import { useIntl } from 'react-intl';
+import { Link } from 'react-router-dom';
 
 const Exception404: React.FC = () => {
   const intl = useIntl();
@@ -11,7 +12,7 @@ const Exception404: React.FC = () => {
         title="404"
         subTitle={intl.formatMessage({ id: 'pages.404.subTitle' })}
         extra={
-          <Link to="/" prefetch>
+          <Link to="/welcome">
             <Button type="primary">
               {intl.formatMessage({ id: 'pages.404.buttonText' })}
             </Button>
