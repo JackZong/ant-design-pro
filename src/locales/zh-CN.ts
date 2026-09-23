@@ -4,6 +4,8 @@ export default {
   'menu.admin': '管理页',
   'menu.admin.sub-page': '二级管理页',
   'menu.login': '登录',
+  'menu.collapse': '收起导航',
+  'menu.expand': '展开导航',
   'pages.layouts.userLayout.title':
     'Ant Design 是西湖区最具影响力的 Web 设计规范',
   'pages.login.accountLogin.tab': '账户密码登录',
@@ -45,13 +47,10 @@ export default {
   'pages.403.buttonText': '返回首页',
   'pages.admin.subPage.title': '这个页面只有 admin 权限才能查看',
   'app.error.render.title': '页面出错了',
-  'app.error.render.description':
-    '抱歉，当前页面发生错误，请刷新或返回首页。',
+  'app.error.render.description': '抱歉，当前页面发生错误，请刷新或返回首页。',
   'app.error.chunk.title': '页面加载失败',
-  'app.error.chunk.description.online':
-    '页面资源加载失败，请刷新后重试。',
-  'app.error.chunk.description.offline':
-    '网络连接已断开，请检查网络后刷新。',
+  'app.error.chunk.description.online': '页面资源加载失败，请刷新后重试。',
+  'app.error.chunk.description.offline': '网络连接已断开，请检查网络后刷新。',
   'app.error.retry': '重试',
   'app.error.reload': '刷新页面',
   'app.error.home': '返回首页',

@@ -4,6 +4,8 @@ export default {
   'menu.admin': 'Admin',
   'menu.admin.sub-page': 'Sub-page',
   'menu.login': 'Login',
+  'menu.collapse': 'Collapse navigation',
+  'menu.expand': 'Expand navigation',
   'pages.layouts.userLayout.title':
     'Ant Design is the most influential web design specification in Xihu district',
   'pages.login.accountLogin.tab': 'Account Login',
