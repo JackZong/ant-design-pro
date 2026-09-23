@@ -1,0 +1,67 @@
+{
+  "name": "ant-design-pro",
+  "version": "6.0.3",
+  "private": true,
+  "description": "An out-of-box UI solution for enterprise applications",
+  "type": "module",
+  "repository": "git@github.com:ant-design/ant-design-pro.git",
+  "scripts": {
+    "dev": "vite",
+    "start": "vite",
+    "build": "tsc -b && vite build",
+    "preview": "vite preview --port 8000",
+    "lint": "npm run biome:lint && npm run tsc",
+    "lint-staged": "lint-staged",
+    "biome:lint": "biome lint",
+    "biome": "biome check --write",
+    "prepare": "npx husky",
+    "test": "vitest run",
+    "test:coverage": "vitest run --coverage",
+    "test:watch": "vitest",
+    "test:ui": "vitest --ui",
+    "tsc": "tsc --noEmit"
+  },
+  "browserslist": [
+    "defaults"
+  ],
+  "dependencies": {
+    "@ant-design/icons": "^6.3.2",
+    "@ant-design/pro-components": "^3.1.14-2",
+    "@tanstack/react-query": "^5.101.2",
+    "antd": "^6.6.0",
+    "antd-style": "^4.1.0",
+    "axios": "^1.13.2",
+    "clsx": "^2.1.1",
+    "dayjs": "^1.11.21",
+    "react": "^19.2.7",
+    "react-dom": "^19.2.7",
+    "react-intl": "^7.1.14",
+    "react-router-dom": "^7.9.4"
+  },
+  "devDependencies": {
+    "@ant-design/cli": "^6.6.0",
+    "@biomejs/biome": "^2.5.3",
+    "@commitlint/cli": "^21.2.1",
+    "@commitlint/config-conventional": "^21.2.0",
+    "@tailwindcss/vite": "^4.3.2",
+    "@testing-library/dom": "^10.4.1",
+    "@testing-library/jest-dom": "^7.0.1",
+    "@testing-library/react": "^16.3.2",
+    "@types/node": "^26.2.0",
+    "@types/react": "^19.2.17",
+    "@types/react-dom": "^19.2.3",
+    "@vitejs/plugin-react": "^5.0.4",
+    "@vitest/coverage-v8": "4.1.10",
+    "@vitest/ui": "4.1.10",
+    "happy-dom": "^20.11.2",
+    "husky": "^9.1.7",
+    "lint-staged": "^17.3.0",
+    "tailwindcss": "^4.3.2",
+    "typescript": "^5.9.3",
+    "vite": "^8.0.0",
+    "vitest": "4.1.10"
+  },
+  "engines": {
+    "node": ">=22.0.0"
+  }
+}
