@@ -1,8 +1,8 @@
-import React from 'react';
 import { QueryClient, QueryClientProvider } from '@tanstack/react-query';
 import { App as AntdApp, ConfigProvider } from 'antd';
 import enUS from 'antd/locale/en_US';
 import zhCN from 'antd/locale/zh_CN';
+import React from 'react';
 import { ErrorBoundary } from '@/components';
 import { AntdAppApiBridge } from '@/components/AntdAppApiBridge';
 import { useLocale } from '@/locales';
